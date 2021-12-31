@@ -1,6 +1,6 @@
 <div class="panel panel-default container py-4">
   <div class="panel-heading py-4">
-    <h1>Requests</h1>
+    <h1>Service Requests</h1>
   </div>
   <div class="panel-body">
     <table class="table table-hover table-bordered">
@@ -13,14 +13,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees | async">
-          <td>{{ employee.emailId }}</td>
-          <td>{{ employee.subject }}</td>
-          <td>{{ employee.request }}</td>
+        <tr *ngFor="let serviceRequest of serviceRequests | async">
+          <td>{{ serviceRequest.emailId }}</td>
+          <td>{{ serviceRequest.subject }}</td>
+          <td>{{ serviceRequest.request }}</td>
           <td>
             <button
               class="delete-button btn-danger"
-              (click)="deleteEmployee(employee.id)"
+              (click)="deleteServiceRequest(serviceRequest.id)"
             >
               Delete
             </button>

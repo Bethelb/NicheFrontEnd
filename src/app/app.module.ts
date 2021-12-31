@@ -4,9 +4,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { CreateEmployeeComponent } from "./employee/create-employee/create-employee.component";
-import { EmployeeDetailsComponent } from "./employee/employee-details/employee-details.component";
-import { EmployeeListComponent } from "./employee/employee-list/employee-list.component";
+import { CreateServiceRequestComponent } from "./service-request/create-service-request/create-service-request.component";
+import { ServiceRequestDetailsComponent } from "./service-request/service-request-details/service-request-details.component";
+import { ServiceRequestListComponent } from "./service-request/service-request-list/service-request-list.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FooterComponent } from "./core/components/layout/footer/footer.component";
 import { HeaderComponent } from "./core/components/layout/header/header.component";
@@ -17,9 +17,9 @@ import { AboutusComponent } from "./core/components/layout/aboutus/aboutus.compo
 @NgModule({
   declarations: [
     AppComponent,
-    CreateEmployeeComponent,
-    EmployeeDetailsComponent,
-    EmployeeListComponent,
+    CreateServiceRequestComponent,
+    ServiceRequestDetailsComponent,
+    ServiceRequestListComponent,
     FooterComponent,
     HeaderComponent,
     LandingComponent,
