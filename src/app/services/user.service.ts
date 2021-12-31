@@ -13,4 +13,8 @@ export class UserService {
   createUser(user: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}/register`, user);
   }
+
+  loginUser(jwtRequest: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/authenticate`, jwtRequest);
+  }
 }
