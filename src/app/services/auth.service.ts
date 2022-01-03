@@ -17,7 +17,7 @@ import { JwtRequest } from "../models/jwt-request";
 export class AuthService {
   baseUrl: string = "/api";
   headers = new HttpHeaders().set("Content-Type", "application/json");
-  currentUser = {};
+  currentUsername: string = "";
 
   constructor(private http: HttpClient, public router: Router) {}
 
@@ -27,6 +27,7 @@ export class AuthService {
   }
 
   login(jwtRequest: JwtRequest) {
+    this.currentUsername = jwtRequest.username;
     return this.http
       .post<any>(`${this.baseUrl}/authenticate`, jwtRequest)
       .subscribe((res: any) => {
