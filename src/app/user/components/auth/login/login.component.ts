@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { JwtRequest } from "src/app/models/jwt-request";
-import { UserService } from "src/app/services/user.service";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-login",
@@ -10,15 +11,13 @@ import { UserService } from "src/app/services/user.service";
 export class LoginComponent implements OnInit {
   jwtRequest: JwtRequest = new JwtRequest();
 
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
   login() {
-    this.userService.loginUser(this.jwtRequest).subscribe(
-      (data) => console.log("Logging in..."),
-      (error) => console.log(error)
-    );
+    console.log(this.jwtRequest);
+    this.authService.login(this.jwtRequest);
     this.jwtRequest = new JwtRequest();
   }
 }

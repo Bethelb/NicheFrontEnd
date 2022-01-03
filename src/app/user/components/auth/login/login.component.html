@@ -8,10 +8,10 @@
         <div class="form-group input-group-lg">
           <input
             class="form-control input-lg"
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            [(ngModel)]="email"
+            type="text"
+            placeholder="Username"
+            name="username"
+            [(ngModel)]="jwtRequest.username"
           />
           <br />
         </div>
@@ -21,7 +21,7 @@
             type="password"
             placeholder="Password"
             name="password"
-            [(ngModel)]="password"
+            [(ngModel)]="jwtRequest.password"
           />
         </div>
         <div class="py-4">
