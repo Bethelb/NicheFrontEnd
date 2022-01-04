@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { JwtRequest } from "src/app/models/jwt-request";
+import { LoginData } from "src/app/models/login-data";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
@@ -9,15 +9,14 @@ import { AuthService } from "src/app/services/auth.service";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
-  jwtRequest: JwtRequest = new JwtRequest();
+  loginData: LoginData = new LoginData();
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
 
   login() {
-    console.log(this.jwtRequest);
-    this.authService.login(this.jwtRequest);
-    this.jwtRequest = new JwtRequest();
+    this.authService.login(this.loginData);
+    this.loginData = new LoginData();
   }
 }

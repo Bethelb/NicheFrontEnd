@@ -9,7 +9,7 @@ import {
   HttpErrorResponse,
 } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { JwtRequest } from "../models/jwt-request";
+import { LoginData } from "../models/login-data";
 
 @Injectable({
   providedIn: "root",
@@ -26,10 +26,10 @@ export class AuthService {
     return this.http.post(api, user).pipe(catchError(this.handleError));
   }
 
-  login(jwtRequest: JwtRequest) {
-    this.currentUsername = jwtRequest.username;
+  login(loginData: LoginData) {
+    this.currentUsername = loginData.username;
     return this.http
-      .post<any>(`${this.baseUrl}/authenticate`, jwtRequest)
+      .post<any>(`${this.baseUrl}/authenticate`, loginData)
       .subscribe((res: any) => {
         localStorage.setItem("id_token", res.jwt);
         this.router.navigateByUrl("/");
