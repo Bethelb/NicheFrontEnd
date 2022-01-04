@@ -31,7 +31,7 @@ export class AuthService {
     return this.http
       .post<any>(`${this.baseUrl}/authenticate`, jwtRequest)
       .subscribe((res: any) => {
-        localStorage.setItem("id_token", res.token);
+        localStorage.setItem("id_token", res.jwt);
         this.router.navigateByUrl("/");
       });
   }
